@@ -1,13 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <!-- <router-link to="/">Login</router-link> | -->
-      <router-link to="/about">About</router-link>|
-      <router-link to="/text">Text</router-link>
+    <Layout />
+    <!-- <div id="nav"> -->
+    <!-- <router-link to="/">Login</router-link> | -->
+    <!-- <router-link to="/about">About</router-link>|
+      <router-link to="/text">Text</router-link>|
+      <router-link to="/menu">Menu</router-link>
     </div>
-    <router-view />
+    <router-view /> -->
   </div>
 </template>
+<script>
+import Layout from './components/common/Layout.vue'
+export default {
+  components: {
+    Layout
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
