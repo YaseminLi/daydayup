@@ -1,31 +1,24 @@
 <template>
   <div id="app">
-    <Layout />
-    <!-- <div id="nav"> -->
-    <!-- <router-link to="/">Login</router-link> | -->
-    <!-- <router-link to="/about">About</router-link>|
-      <router-link to="/text">Text</router-link>|
-      <router-link to="/menu">Menu</router-link>
-    </div>
-    <router-view /> -->
+    <router-view></router-view>
   </div>
 </template>
-<script>
-import Layout from './components/common/Layout.vue'
-export default {
-  components: {
-    Layout
-  }
-}
-</script>
 
 <style lang="scss">
+html,body{
+  margin:0;
+  height:100%
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // text-align: center;
   color: #2c3e50;
+  height:100%
+}
+.el-container,.el-menu{
+  height:100%
 }
 
 #nav {

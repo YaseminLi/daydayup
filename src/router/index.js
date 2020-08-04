@@ -1,29 +1,76 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import Login from '../views/Login.vue'
-// import Text from '../views/Text.vue'
+import Layout from '../components/common/Layout'
+import AppMain from '../components/common/AppMain'
+
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push (location) {
+  return originalPush.call(this, location).catch(err => err)
+} // ming
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    redirect: '/about'
+    hidden: true, // 不在导航列表中显示
+    component: Layout,
+    redirect: '/css' // 当路由未匹配时重定向，可作初始化显示页面设置
+  },
+  {
+    path: '/js',
+    component: Layout,
+    name: 'js',
+    leaf: true,
+    meta: {
+      title: 'js',
+      icon: 'fa fa-paper-plane'
+    },
+    children: [
+      {
+        path: '/js/calculate',
+        name: 'calculate',
+        meta: {
+          title: 'calculate',
+          icon: 'fa fa-paper-plane'
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "textShadow" */ '../components/js/calculate'
+          )
+      }
+    ]
   },
   {
     path: '/css',
+    component: Layout,
     name: 'css',
+    leafThree: true, // 有三级路由
+    meta: {
+      title: 'css',
+      icon: 'fa fa-paper-plane'
+    },
     children: [
       {
-        path: '/style',
+        path: '/css/style',
         name: 'style',
+        meta: {
+          title: 'style',
+          icon: 'fa fa-paper-plane'
+        },
+        component: AppMain,
+        leaf: true, // 有二级路由
         children: [
           {
-            path: '/textShadow',
+            path: '/css/style/textShadow',
             name: 'textShadow',
+            meta: {
+              title: 'textShadow',
+              icon: 'fa fa-paper-plane'
+            },
             component: () =>
               import(
-                /* webpackChunkName: "textShadow" */ '../components/css/TextShadow.vue'
+                /* webpackChunkName: "textShadow" */ '@components/css/TextShadow.vue'
               )
           }
         ]
@@ -32,41 +79,40 @@ const routes = [
   },
   {
     path: '/vue',
+    component: Layout,
     name: 'vue',
+    leaf: true, // 有二级路由
+    meta: {
+      title: 'vue',
+      icon: 'fa fa-paper-plane'
+    },
     children: [
       {
-        path: '/navMenu',
+        path: '/vue/navMenu',
         name: 'navMenu',
+        meta: {
+          title: 'navMenu',
+          icon: 'fa fa-paper-plane'
+        },
         component: () =>
           import(
-            /* webpackChunkName: "navMenu" */ '../components/vue/NavMenu.vue'
+            /* webpackChunkName: "textShadow" */ '../components/vue/NavMenu.vue'
+          )
+      },
+      {
+        path: '/vue/markdown',
+        name: 'markdown',
+        meta: {
+          title: 'vue中显示markdown文件',
+          icon: 'fa fa-paper-plane'
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "textShadow" */ '../components/vue/markdown'
           )
       }
     ]
   }
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // },
-  // {
-  //   path: '/text',
-  //   name: 'Text',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/Text.vue')
-  // },
-  // {
-  //   path: '/menu',
-  //   name: 'Menu',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ '../components/common/Layout.vue')
-  // }
 ]
 
 const router = new VueRouter({
