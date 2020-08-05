@@ -18,6 +18,11 @@ const routes = [
     redirect: '/css' // 当路由未匹配时重定向，可作初始化显示页面设置
   },
   {
+    path: '/login',
+    name: 'login',
+    component: () => import(/* webpackChunkName: "login" */ '@views/Login')
+  },
+  {
     path: '/js',
     component: Layout,
     name: 'js',

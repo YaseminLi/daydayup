@@ -1,4 +1,3 @@
-
 const path = require('path')
 function resolve (dir) {
   return path.join(__dirname, dir)
@@ -18,7 +17,10 @@ module.exports = {
       .use('markdown-loader')
       .loader('markdown-loader')
       .end()
-    config.resolve.alias.set('@components', resolve('src/components'))
+    config.resolve.alias
+      .set('@components', resolve('src/components'))
+      .set('@views', resolve('src/views'))
+      .set('@assets', resolve('src/assets'))
     // 若需要配置多个别名，后续紧跟着设置set即可
     // config.resolve.alias.set('@scss', resolve('src/static/scss')).set('@',resolve('src'))
   }
