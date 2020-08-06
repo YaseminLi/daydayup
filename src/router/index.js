@@ -14,12 +14,20 @@ const routes = [
   {
     path: '/',
     hidden: true, // 不在导航列表中显示
-    component: Layout,
+    redirect: '/login' // 当路由未匹配时重定向，可作初始化显示页面设置
+  },
+  {
+    path: '*',
+    hidden: true, // 不在导航列表中显示
     redirect: '/css' // 当路由未匹配时重定向，可作初始化显示页面设置
   },
   {
     path: '/login',
     name: 'login',
+    meta: {
+      title: 'js',
+      icon: 'fa fa-paper-plane'
+    },
     component: () => import(/* webpackChunkName: "login" */ '@views/Login')
   },
   {
@@ -122,6 +130,11 @@ const routes = [
 
 const router = new VueRouter({
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  // console.log(from, to)
+  next()
 })
 
 export default router

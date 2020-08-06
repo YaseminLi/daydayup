@@ -51,6 +51,7 @@ export default {
   },
   computed: {
     routes () {
+      console.log('sidebar')
       return this.$router.options.routes.filter(item => !item.hidden)
     }
   }

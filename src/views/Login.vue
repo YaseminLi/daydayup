@@ -34,8 +34,8 @@
 // form表单编写 哪些值是携带的
 // input框：点击label聚焦input,密码显示圆点，无聚焦外框
 // checkbox:替换成图片？点击文字选中 鼠标换成手的样式
-// 本地存储的密码加密……??
-const { CryptoJS } = require('cryptojslib')
+// 本地存储的密码加密 cryptoJS
+import cryptoJS from '../utils/cryptoJS.js'
 export default {
   name: 'Login',
   data () {
@@ -49,14 +49,7 @@ export default {
   created () {
     // created生命周期里，data数据已经初始化，DOM还没有挂载
     this.getLoginInfo()
-    var key = CryptoJS.enc.Utf8.parse('8NONwyJtHesysWpM')// 密钥
-    var plaintText = '{"a":1}' // 需要传输的明文
-    var encryptedData = CryptoJS.AES.encrypt(plaintText, key, {
-      mode: CryptoJS.mode.ECB, // 这里是选择的模式
-      padding: CryptoJS.pad.Pkcs7// 这里也是选择的一个模式
-    })
-    console.log('加密前：' + plaintText)
-    console.log('加密后：' + encryptedData)
+    // var key = CryptoJS.enc.Utf8.parse('8NONwyJtHesysWpM')// 密钥
   },
   methods: {
     getLoginInfo () {
@@ -65,7 +58,7 @@ export default {
       console.log('loginInfo', loginInfo)
       const { user, password, isRememberUser, isRememberPassword } = loginInfo
       this.user = user
-      this.password = password
+      this.password = cryptoJS.Decrypt(password)
       this.isRememberUser = isRememberUser
       this.isRememberPassword = isRememberPassword
     },
@@ -82,7 +75,7 @@ export default {
         isRememberUser: this.isRememberUser,
         isRememberPassword: this.isRememberPassword,
         user: this.isRememberUser ? this.user : '',
-        password: this.isRememberPassword ? this.password : ''
+        password: this.isRememberPassword ? cryptoJS.Encrypt(this.password) : ''
       }
       localStorage.setItem('login', JSON.stringify(login))
     },
@@ -92,6 +85,8 @@ export default {
       // 发送登录请求，根据服务端返回的状态码判断是否登录成功
       // 成功
       // 1.在本地存储账号密码等信息
+      console.log('password:', this.password)
+      this.storageLoginInfo()
       // 2.路径跳转 this.$router.push()
     }
   },
