@@ -1,9 +1,9 @@
 ---
 
 # 是否使用默认主题页
-home: true 
+# home: true 
 # 主页图片 存放目录/docs/.vuepress/public/heroImage.png
-heroImage: /heroImage.png
+# heroImage: /heroImage.png
 # heroText: ……
 # # tagline: 博客示例
 # actionText: 关于主人 →

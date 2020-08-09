@@ -1,17 +1,17 @@
 module.exports = {
     base: '/',
-    title: '……的blog',
-    description: 'Yasemin\'s blog ',
+    title: 'DayDayUp💪',
+    description: 'Yasemin\'s learning ',
     head: [
         // ico 配置
         ['link', { rel: 'icon', href: '/icon.ico' }]
     ],
     themeConfig: {
-        search:false,//关闭搜索框
+        search:true,//关闭搜索框
         searchMaxSuggestions: 10,
         lastUpdated: '上次更新时间',
         // GitHub仓库
-        repo: 'https://github.com/YaseminLi/daydayup.git',
+        repo: 'https://github.com/YaseminLi',
         // 自定义仓库链接文字。
         repoLabel: 'My GitHub',
         nav: [
