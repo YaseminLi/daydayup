@@ -22,6 +22,16 @@ const routes = [
     redirect: '/css' // 当路由未匹配时重定向，可作初始化显示页面设置
   },
   {
+    path: '/table',
+    name: 'table',
+    component: () => import(/* webpackChunkName: "table" */ '../components/demo/table.vue')
+  },
+  {
+    path: '/clock',
+    name: 'table',
+    component: () => import(/* webpackChunkName: "clock" */ '../components/demo/clock.vue')
+  },
+  {
     path: '/login',
     name: 'login',
     meta: {
