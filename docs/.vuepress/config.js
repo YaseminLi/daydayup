@@ -15,27 +15,28 @@ module.exports = {
         // 自定义仓库链接文字。
         repoLabel: 'My GitHub',
         nav: [
-            { text: '项目作品', link: '/project/music.md' },
-            {
-                text: '学习笔记',
-                items: [
-                { text: 'js', link: '/articles/js/作用域和闭包.html' },
-                  { text: 'html', link: '/articles/html/模板.html' },
-                  { text: 'css', link: '/articles/css/' },
-                  { text: 'nodeJS', link: '/articles/nodeJS/gulp.html' },
-                  { text: '算法与数据结构', link: '/articles/algorithm/heap.html' },
-                  { text: '面试题', link: '/articles/interview/css相关.html' },
-                  { text: '小程序', link: '/articles/weixin_miniprogram/指南.html' }
-                ]
-              }
-            
+            // { text: '项目作品', link: '/project/music.md' },
+            { text: 'js', link: '/js/作用域和闭包.md'},
+            { text: 'html', link: '/html/模板.md' },
+            { text: "css", link: '/css/其他.md' },
+            { text: "vue", link: '/css/其他.md' },
+            { text: "react", link: '/css/其他.md' },
+            { text: "webpack", link: '/css/其他.html' },
+            { text: "nodeJS", link: '/nodeJS/gulp.html' },
+            { text: '算法与数据结构', link: '/algorithm/heap.html' },
+            { text: '面试题', link: '/interview/css相关.html' },
+            { text: '小程序', link: '/weixin_miniprogram/指南.html' },
+            { text: '其它', link: '/other/git.html' },
         ],
         sidebar: {
-            '/articles/algorithm/': [
+            '/other/': [
+                ['git','git'],
+           ],
+            '/algorithm/': [
                  ['heap','堆'],
                  ['binary-search','二分查找法'],
             ],
-            '/articles/js/': [
+            '/js/': [
                 ['变量类型的分类及检测','变量类型的分类及检测'],
                 ['数据类型的转换','数据类型的转换'],
                 ['作用域和闭包','作用域和闭包'],
@@ -46,12 +47,12 @@ module.exports = {
                 ['cookie storage','cookie storage'],
                 ['Ajax','Ajax']
             ],
-            '/articles/html/': [
+            '/html/': [
                 ['模板','html模板'],
                 ['标签','html标签'],
                 ['svg','svg']
             ],
-            '/articles/css/': [
+            '/css/': [
                 ['元素类型','元素类型'],
                 ['css sprite','css sprite'],
                 ['position','position'],
@@ -60,10 +61,10 @@ module.exports = {
                 ['样式选择器及优先级','样式选择器及优先级'],
                 ['一些样式','一些样式'],
             ],
-            '/articles/nodeJS/': [
+            '/nodeJS/': [
                 ['gulp','本地构建-gulp']
             ],
-            '/articles/interview/': [
+            '/interview/': [
                 ['html相关','html相关'],
                 ['css相关','css相关'],
                 ['js相关','js相关'],
@@ -72,7 +73,7 @@ module.exports = {
                 ['本地构建','本地构建'],
                 ['其它','其它']
             ],
-            '/articles/weixin_miniprogram/': [
+            '/weixin_miniprogram/': [
                 ['指南','指南'],
                 ['wxs','wxs'],
                 ['template','template'],
