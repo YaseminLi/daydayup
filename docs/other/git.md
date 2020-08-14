@@ -3,12 +3,17 @@
 2. git commit -m'' 提交到本地仓库
 3. git push origin master 提交到远程仓库master分支
 4. git branch 当前分支
-5.  git checkout xxx 还原文件或者切换分支
+5. git checkout xxx 还原文件或者切换分支
 6. git status
 7. git diff 查看不同
 8. git pull origin master  已有仓库，下载下来后同步到自己的本地
 9. git checkout -b xxx 新建分支并切换到分支b
 10. git merge dev 在master分支下合并dev 然后再
+11. git log --pretty=oneline  查看提交记录
+12. git reflog查看git提交历史 比如撤销过的版本号
+13. pwd //显示当前目录
+14. ls -ah //显示当前目录下的明细
+15. cat readme.txt//查看修改内容
 
 [常用命令by阮一峰](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
 
@@ -86,16 +91,24 @@ master上为可以发布的代码，需要在分支上写自己负责的部分�
 ## gitignore
 - **/foo: 忽略/foo, a/foo, a/b/foo等
 
+## 撤销修改
+- git checkout --file//工作区时
+- git reset HEAD <file>//暂存区时，已经add了，先撤销提交，重新放回工作区
+
 ## 版本回退
--  git log --pretty=oneline  查看提交记录
-
-**1094a**db7b9b3807259d8cb349e7df1d4d6477073 (HEAD -> master) append GPL
-e475afc93c209a690c39c13a46716e8fa000c366 add distributed
-eaadf4e385e865d25c48e7ca9c8395c3f7dfaef0 wrote a readme file	
-- git reset --hard HEAD^ 
-
 用HEAD表示当前版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写成HEAD~100	
+
+### 本地远程都回退
 - git reset --hard 1094a（版本号的前5位）
+
+此时git status 提示本地落后远程一个版本
+
+- git push origin 分支名 --force
+
+### 远程回退，保留本地的修改，即撤销push
+- git reset --soft 1094a（版本号的前5位）
+- git add,commit
+- git push origin 分支名 --force
 
 ## 删除本地和远程分支
 - 删除本地分支 git branch -D dev
