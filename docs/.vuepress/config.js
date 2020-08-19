@@ -31,6 +31,7 @@ module.exports = {
         sidebar: {
             '/other/': [
                 ['git', 'git'],
+                ['cornerstone','svn-cornerstone']
             ],
             '/vue/': [
                 ['init', '项目初始化'],
