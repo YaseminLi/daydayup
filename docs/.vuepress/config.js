@@ -6,6 +6,7 @@ module.exports = {
         // ico 配置
         ['link', { rel: 'icon', href: '/icon.ico' }]
     ],
+    plugins:['demo-container'],
     themeConfig: {
         search: true,//关闭搜索框
         searchMaxSuggestions: 10,
@@ -19,16 +20,24 @@ module.exports = {
             { text: 'js', link: '/js/作用域和闭包.md' },
             { text: 'html', link: '/html/模板.md' },
             { text: "css", link: '/css/其他.md' },
-            { text: "vue", link: '/css/其他.md' },
+            { text: '示例', link: '/action/uploadFile.html' },
+            { text: "vue", link: '/vue/init.md' },
             { text: "react", link: '/css/其他.md' },
             { text: "webpack", link: '/css/其他.html' },
             { text: "nodeJS", link: '/nodeJS/gulp.html' },
             { text: '算法与数据结构', link: '/algorithm/heap.html' },
-            { text: '面试题', link: '/interview/css相关.html' },
+            // { text: '面试题', link: '/interview/css相关.html' },
             { text: '小程序', link: '/weixin_miniprogram/指南.html' },
             { text: '其它', link: '/other/git.html' },
         ],
         sidebar: {
+            '/vue/': [
+                ['init', 'vue项目初始化'],
+                ['update', '升级到vue-cli3'],
+            ],
+            '/action/': [
+                ['uploadFile', '上传图片'],
+            ],
             '/other/': [
                 ['git', 'git'],
                 ['cornerstone','svn-cornerstone']

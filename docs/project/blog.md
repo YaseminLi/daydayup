@@ -71,7 +71,7 @@ README.md文件中这样编辑：
 ---
 <cv />
 ```
-```
+
 ## 04-导航栏
 导航栏页面标题、搜索框、 导航栏链接、多语言切换、仓库链接，取决于在 .vupress/config.js 文件中的配置：
 ```javascript
@@ -175,3 +175,5 @@ module.exports = {
 >3. [https://blog.csdn.net/yinqian999/article/details/90694736](https://blog.csdn.net/yinqian999/article/details/90694736)
 >4. [https://www.jiangshuaijie.com/](https://www.jiangshuaijie.com/)
 
+## 在md文件中使用vue组件
+[https://docs.chenjianhui.site/vuepress-plugin-demo-container/zh/started.html#%E5%AE%89%E8%A3%85](https://docs.chenjianhui.site/vuepress-plugin-demo-container/zh/started.html#%E5%AE%89%E8%A3%85)
