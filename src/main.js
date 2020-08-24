@@ -4,10 +4,13 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@assets/css/reset.scss'
+import Vconsole from 'vconsole'
 
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false
+
+new Vconsole()
 
 new Vue({
   router,

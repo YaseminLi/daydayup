@@ -4,9 +4,10 @@ function resolve (dir) {
 }
 module.exports = {
   devServer: {
-    port: 8000,
-    open: true
+    port: 8080,
+    open: true,
   },
+  lintOnSave: false,
   chainWebpack: config => {
     config.module
       .rule('md')

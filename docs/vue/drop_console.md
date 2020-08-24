@@ -96,17 +96,18 @@ terserOptions: {
 
 应该是vue-cli中已经使用了terser然后我们又配置了一个，所以才会出现俩，在`node_modules/@vue/cli-service/lib/config/base.js`文件中可以找到terser的配置。那是否可以直接在默认配置上添加呢？
 
+官方文档：[vuecli4中去除console.log](https://cli.vuejs.org/migrating-from-v3/)
 
 ### vuecli3自带terser配置，添加options即可---推荐
 vue.config.js
 ```js
 module.exports = {
-    ……
-  configureWebpack: config => {
-    // ming 这里要不要判断process.env，不加的话开发环境是不起作用的诶
-    config.optimization.minimizer[0].options.terserOptions.compress.warnings = false
-    config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
-    config.optimization.minimizer[0].options.terserOptions.compress.drop_debugger = true
+  chainWebpack: (config) => {
+    // 不需要判断是否是生产环境，webpack会处理
+    config.optimization.minimizer('terser').tap((args) => {
+      args[0].terserOptions.compress.drop_console = true
+      return args
+    })
   }
 }
 ```
