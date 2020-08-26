@@ -1,4 +1,13 @@
-## router.beforeEach()
+### 不存在路由重定向
+```js
+{
+path: '*',
+redirect: '/login' // 当路由未匹配时重定向，可作初始化显示页面设置
+}
+```
+
+
+### router.beforeEach()
 
 router.beforeEach((to,from,next)=>{})
 

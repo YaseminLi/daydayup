@@ -1,3 +1,5 @@
+:::demo
+```html
 <template>
   <!-- <form method='get' action='https://www.baidu.com' onsubmit='submit'> -->
   <!-- method:提交表单的http方式 -->
@@ -52,33 +54,42 @@
 // input框：点击label聚焦input,密码显示圆点，无聚焦外框
 // checkbox:替换成图片 点击文字选中 鼠标换成手的样式
 // 本地存储的密码加密 cryptoJS
-import CryptoJS from 'crypto-js'
-const key = CryptoJS.enc.Utf8.parse('1234123412ABCDEF') // 十六位十六进制数作为密钥
-const iv = CryptoJS.enc.Utf8.parse('ABCDEF1234123412') // 十六位十六进制数作为密钥偏移量
+
+
+// 纯html页面中，可以引入script:http://react.file.alimmdn.com/aes.js
+// import CryptoJS from 'crypto-js'
+// const key = CryptoJS.enc.Utf8.parse('1234123412ABCDEF') // 十六位十六进制数作为密钥
+// const iv = CryptoJS.enc.Utf8.parse('ABCDEF1234123412') // 十六位十六进制数作为密钥偏移量
 
 // 解密方法
-function Decrypt(word) {
-  const encryptedHexStr = CryptoJS.enc.Hex.parse(word)
-  const srcs = CryptoJS.enc.Base64.stringify(encryptedHexStr)
-  const decrypt = CryptoJS.AES.decrypt(srcs, key, {
-    iv: iv,
-    mode: CryptoJS.mode.CBC,
-    padding: CryptoJS.pad.Pkcs7
-  })
-  const decryptedStr = decrypt.toString(CryptoJS.enc.Utf8)
-  return decryptedStr.toString()
+function Decrypt(word){
+  return word
 }
+// function Decrypt(word) {
+//   const encryptedHexStr = CryptoJS.enc.Hex.parse(word)
+//   const srcs = CryptoJS.enc.Base64.stringify(encryptedHexStr)
+//   const decrypt = CryptoJS.AES.decrypt(srcs, key, {
+//     iv: iv,
+//     mode: CryptoJS.mode.CBC,
+//     padding: CryptoJS.pad.Pkcs7
+//   })
+//   const decryptedStr = decrypt.toString(CryptoJS.enc.Utf8)
+//   return decryptedStr.toString()
+// }
 
 // 加密方法
-function Encrypt(word) {
-  const srcs = CryptoJS.enc.Utf8.parse(word)
-  const encrypted = CryptoJS.AES.encrypt(srcs, key, {
-    iv: iv,
-    mode: CryptoJS.mode.CBC,
-    padding: CryptoJS.pad.Pkcs7
-  })
-  return encrypted.ciphertext.toString().toUpperCase()
+function Encrypt(word){
+  return word
 }
+// function Encrypt(word) {
+//   const srcs = CryptoJS.enc.Utf8.parse(word)
+//   const encrypted = CryptoJS.AES.encrypt(srcs, key, {
+//     iv: iv,
+//     mode: CryptoJS.mode.CBC,
+//     padding: CryptoJS.pad.Pkcs7
+//   })
+//   return encrypted.ciphertext.toString().toUpperCase()
+// }
 
 export default {
   name: 'Login',
@@ -171,3 +182,5 @@ export default {
   background: url('../assets/images/checkbox_normal.png') no-repeat 0 50%;
 }
 </style>
+```
+:::

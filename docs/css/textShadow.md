@@ -1,3 +1,5 @@
+:::demo
+```html
 <template>
   <div class="text">
     原样式：
@@ -47,3 +49,5 @@ p {
   font-size: 24px;
 }
 </style>
+```
+:::

@@ -6,7 +6,7 @@ module.exports = {
         // ico 配置
         ['link', { rel: 'icon', href: '/icon.ico' }]
     ],
-    plugins:['demo-container'],
+    plugins: ['demo-container'],
     themeConfig: {
         search: true,//关闭搜索框
         searchMaxSuggestions: 10,
@@ -19,10 +19,10 @@ module.exports = {
             // { text: '项目作品', link: '/project/music.md' },
             { text: 'js', link: '/js/作用域和闭包.md' },
             { text: 'html', link: '/html/模板.md' },
-            { text: "css", link: '/css/其他.md' },
+            { text: "css", link: '/css/其他.html' },
             { text: '示例', link: '/action/uploadFile.html' },
             { text: "vue", link: '/vue/init.md' },
-            { text: "react", link: '/css/其他.md' },
+            { text: "react", link: '/css/其他.html' },
             { text: "webpack", link: '/css/其他.html' },
             { text: "nodeJS", link: '/nodeJS/gulp.html' },
             { text: '算法与数据结构', link: '/algorithm/heap.html' },
@@ -34,13 +34,17 @@ module.exports = {
             '/vue/': [
                 ['init', 'vue项目初始化'],
                 ['update', '升级到vue-cli3'],
+                ['elementUI', 'elementUI使用'],
+                ['markdown', 'vue项目中显示markdown文件'],
             ],
             '/action/': [
                 ['uploadFile', '上传图片'],
+                ['clock', '倒计时'],
+                ['login', '登录'],
             ],
             '/other/': [
                 ['git', 'git'],
-                ['cornerstone','svn-cornerstone']
+                ['cornerstone', 'svn-cornerstone']
             ],
             '/vue/': [
                 ['init', '项目初始化'],
@@ -75,6 +79,7 @@ module.exports = {
                 ['其他', '其他'],
                 ['样式选择器及优先级', '样式选择器及优先级'],
                 ['一些样式', '一些样式'],
+                ['textShadow','文字阴影']
             ],
             '/nodeJS/': [
                 ['gulp', '本地构建-gulp']
@@ -99,7 +104,7 @@ module.exports = {
                 ['交互相关', '交互相关'],
                 ['样式相关', '样式相关'],
                 ['其他', '其他'],
-                ['reset','样式初始化']
+                ['reset', '样式初始化']
             ],
             '/project/': [
                 ['music', '音乐WebApp'],

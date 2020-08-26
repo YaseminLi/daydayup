@@ -19,12 +19,34 @@ module.exports = {
 }
 ```
 
+### 测试环境下 npm run dev 自动打开项目
 
-### 测试环境下npm run dev自动打开项目
 ```js
 module.exports = {
   devServer: {
-      open: true
-  },
+    open: true
+  }
+}
+```
+
+### 关闭生产环境的 sourcemap
+
+```js
+module.exports = {
+  productionSourceMap: false
+}
+```
+
+### 去除生产环境 console
+
+```js
+module.exports = {
+  chainWebpack: config => {
+    // 去除生产环境的console
+    config.optimization.minimizer('terser').tap(args => {
+      args[0].terserOptions.compress.drop_console = true
+      return args
+    })
+  }
 }
 ```
