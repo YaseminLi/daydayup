@@ -41,6 +41,7 @@ module.exports = {
                 ['uploadFile', '上传图片'],
                 ['clock', '倒计时'],
                 ['login', '登录'],
+                ['encrypt', '加密解密'],
             ],
             '/other/': [
                 ['git', 'git'],
@@ -64,7 +65,8 @@ module.exports = {
                 ['防抖和节流', '防抖和节流'],
                 ['IIFE', 'IIFE'],
                 ['cookie storage', 'cookie storage'],
-                ['Ajax', 'Ajax']
+                ['Ajax', 'Ajax'],
+                ['calculate', '计算']
             ],
             '/html/': [
                 ['模板', 'html模板'],
