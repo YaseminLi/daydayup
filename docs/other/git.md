@@ -90,7 +90,7 @@ master 上为可以发布的代码，需要在分支上写自己负责的部分�
 
 * 拉其他分支的远程代码
 * git checkout -b branch
-* git checkout —-track orgin/develop
+* git checkout —-track origin/develop
 
 ## gitignore
 
