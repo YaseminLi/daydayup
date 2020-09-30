@@ -42,7 +42,8 @@
     </div>
     <!-- form中type="submit"点击提交表单 -->
     <!-- <button type="submit">登录</button> -->
-    <button @click="loginCheck">登录</button>
+    <button @click.once="loginCheck">登录</button>
+    <div v-for="item in list" :key="item" ref="listItem">{{item}}</div>
   </div>
   <!-- </form> -->
 </template>
@@ -87,7 +88,8 @@ export default {
       user: '',
       password: '',
       isRememberUser: '',
-      isRememberPassword: ''
+      isRememberPassword: '',
+      list:[1,2,3,4]
     }
   },
   created() {
@@ -147,6 +149,9 @@ export default {
         this.isRememberPassword = false
       }
     }
+  },
+  mounted(){
+    console.log('list refs:',this.$refs);
   }
 }
 </script>

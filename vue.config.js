@@ -24,5 +24,13 @@ module.exports = {
       .set('@assets', resolve('src/assets'))
     // 若需要配置多个别名，后续紧跟着设置set即可
     // config.resolve.alias.set('@scss', resolve('src/static/scss')).set('@',resolve('src'))
-  }
+  },
+  css: {
+    sourceMap: true,
+    loaderOptions: {
+      sass: {
+        prependData: `@import "@/assets/css/reset.scss";`,
+      },
+    },
+  },
 }

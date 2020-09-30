@@ -10,7 +10,7 @@ Vue.use(ElementUI)
 
 Vue.config.productionTip = false
 
-new Vconsole()
+// new Vconsole()
 
 new Vue({
   router,

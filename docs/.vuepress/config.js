@@ -20,6 +20,7 @@ module.exports = {
             { text: 'js', link: '/js/作用域和闭包.md' },
             { text: 'html', link: '/html/模板.md' },
             { text: "css", link: '/css/其他.html' },
+            { text: "bom", link: '/bom/history.html' },
             { text: '示例', link: '/action/uploadFile.html' },
             { text: "vue", link: '/vue/init.md' },
             { text: "react", link: '/css/其他.html' },
@@ -36,6 +37,9 @@ module.exports = {
                 ['update', '升级到vue-cli3'],
                 ['elementUI', 'elementUI使用'],
                 ['markdown', 'vue项目中显示markdown文件'],
+                ['key', 'key的作用'],
+                ['修饰符', '修饰符'],
+                ['组件之间的通信', '组件之间的通信'],
             ],
             '/action/': [
                 ['uploadFile', '上传图片'],
@@ -72,6 +76,9 @@ module.exports = {
                 ['模板', 'html模板'],
                 ['标签', 'html标签'],
                 ['svg', 'svg']
+            ],
+            '/bom/': [
+                ['history', 'history'],
             ],
             '/css/': [
                 ['元素类型', '元素类型'],

@@ -63,6 +63,28 @@ const routes = [
               )
           }
         ]
+  },
+  {
+    path: '/demo',
+    name: 'demo',
+    component:Layout,
+    // leaf:true,//有二级路由
+    meta:{
+      title:'demo'
+    },
+    children: [
+          {
+            path: '/demo',
+            name: 'demo',
+            meta: {
+              title: 'demo'
+            },
+            component: () =>
+              import(
+                /* webpackChunkName: "demo" */ '../views/demo.vue'
+              )
+          }
+        ]
   }
 ]
 

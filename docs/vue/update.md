@@ -27,3 +27,14 @@ VUE_APP_API_ROOT=https://i2test3.want-want.com
 
 vux 不支持 vuecli3.0，所以对 vux 要进行适配处理
 vue 的降级和 i18nd 的使用
+
+vux升级vuecli3
+https://juejin.im/post/6844904101222809613#heading-8
+
+Nom
+npm i vux@^2.8.1 vux-loader@^1.1.31  vue-loader@^14.0.0 -D
+
+ vue-loader@14.2.2 -D  ## 解决vux对 vue-cli 3.x的兼容性问题
+
+Autoprefix 不用加 vuecli已带
+
