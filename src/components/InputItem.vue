@@ -8,7 +8,7 @@
 <script>
 export default {
   model: {
-    prop: 'checked',
+    prop: 'checked', 
     event: 'change'
   },
 }

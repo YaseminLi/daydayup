@@ -49,7 +49,8 @@ module.exports = {
             ],
             '/other/': [
                 ['git', 'git'],
-                ['cornerstone', 'svn-cornerstone']
+                ['cornerstone', 'svn-cornerstone'],
+                ['vscode', 'vscode必备']
             ],
             '/vue/': [
                 ['init', '项目初始化'],
