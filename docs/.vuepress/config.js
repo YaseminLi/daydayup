@@ -1,6 +1,6 @@
 module.exports = {
     base: '/',
-    title: 'DayDayUp💪',
+    title: 'DayDayUp',
     description: 'Yasemin\'s learning ',
     head: [
         // ico 配置
@@ -23,8 +23,8 @@ module.exports = {
             { text: "bom", link: '/bom/history.html' },
             { text: '示例', link: '/action/uploadFile.html' },
             { text: "vue", link: '/vue/init.md' },
-            { text: "react", link: '/css/其他.html' },
-            { text: "webpack", link: '/css/其他.html' },
+            // { text: "react", link: '/css/其他.html' },
+            // { text: "webpack", link: '/css/其他.html' },
             { text: "nodeJS", link: '/nodeJS/gulp.html' },
             { text: '算法与数据结构', link: '/algorithm/heap.html' },
             // { text: '面试题', link: '/interview/css相关.html' },
@@ -89,7 +89,8 @@ module.exports = {
                 ['其他', '其他'],
                 ['样式选择器及优先级', '样式选择器及优先级'],
                 ['一些样式', '一些样式'],
-                ['textShadow','文字阴影']
+                ['textShadow','文字阴影'],
+                ['layout','布局']
             ],
             '/nodeJS/': [
                 ['gulp', '本地构建-gulp']

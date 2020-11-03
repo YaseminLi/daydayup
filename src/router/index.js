@@ -85,6 +85,28 @@ const routes = [
               )
           }
         ]
+  },
+  {
+    path: '/flex',
+    name: 'flex',
+    component:Layout,
+    // leaf:true,//有二级路由
+    meta:{
+      title:'flex'
+    },
+    children: [
+          {
+            path: '/flex',
+            name: 'flex',
+            meta: {
+              title: 'flex'
+            },
+            component: () =>
+              import(
+                /* webpackChunkName: "flex" */ '../views/flex.vue'
+              )
+          }
+        ]
   }
 ]
 
