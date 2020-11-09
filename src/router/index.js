@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Layout from '../components/common/Layout'
 
-// const originalPush = VueRouter.prototype.push
-// VueRouter.prototype.push = function push (location) {
-//   return originalPush.call(this, location).catch(err => err)
-// } // ming
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push (location) {
+  console.log('location:', location);
+  return originalPush.call(this, location).catch(err => err)
+}
 
 Vue.use(VueRouter)
 
@@ -23,90 +23,50 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component:Layout,
     // leaf:true,//有二级路由
-    meta:{
-      title:'login'
+    meta: {
+      title: 'login'
     },
-    children: [
-          {
-            path: '/login',
-            name: 'login',
-            meta: {
-              title: 'login'
-            },
-            component: () =>
-              import(
+    component: () =>
+      import(
                 /* webpackChunkName: "login" */ '../views/Login.vue'
-              )
-          }
-        ]
+      ),
   },
   {
     path: '/dingwei',
     name: 'dingwei',
-    component:Layout,
     // leaf:true,//有二级路由
-    meta:{
-      title:'dingwei'
+    meta: {
+      title: 'dingwei'
     },
-    children: [
-          {
-            path: '/dingwei',
-            name: 'dingwei',
-            meta: {
-              title: 'dingwei'
-            },
-            component: () =>
-              import(
+    component: () =>
+      import(
                 /* webpackChunkName: "login" */ '../views/Dingwei.vue'
-              )
-          }
-        ]
+      ),
   },
   {
     path: '/demo',
     name: 'demo',
-    component:Layout,
     // leaf:true,//有二级路由
-    meta:{
-      title:'demo'
+    meta: {
+      title: 'demo'
     },
-    children: [
-          {
-            path: '/demo',
-            name: 'demo',
-            meta: {
-              title: 'demo'
-            },
-            component: () =>
-              import(
+    component: () =>
+      import(
                 /* webpackChunkName: "demo" */ '../views/demo.vue'
-              )
-          }
-        ]
+      ),
   },
   {
     path: '/flex',
     name: 'flex',
-    component:Layout,
     // leaf:true,//有二级路由
-    meta:{
-      title:'flex'
+    meta: {
+      title: 'flex'
     },
-    children: [
-          {
-            path: '/flex',
-            name: 'flex',
-            meta: {
-              title: 'flex'
-            },
-            component: () =>
-              import(
+    component: () =>
+      import(
                 /* webpackChunkName: "flex" */ '../views/flex.vue'
-              )
-          }
-        ]
+      ),
   }
 ]
 
