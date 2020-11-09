@@ -19,10 +19,11 @@
 	<router-view :seller="seller"></router-view>
 </keep-alive>
 <router-view>
-<!-- 是vrouter-view ue-router中渲染路径匹配到的组件 -->
+<!-- 是router-view vue-router中渲染路径匹配到的组件 -->
 ```
 - 只能有一个组件被渲染，如包含v-for就不行
 - :max可以限制最多缓存多少个组件
+- 如何清除缓存
 
 ## computed和watch有什么区别?
 缓存性、调用方法
