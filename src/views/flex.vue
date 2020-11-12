@@ -30,21 +30,21 @@ export default {
     overflow: hidden;
 } */
 .fill-available {
-    display: inline-block;
-    line-height: 20px;
-    padding: 20px;
-    background-color: #cd0000;
-    color: #fff;
-    vertical-align: middle;
-    width: max-content;
-    
-    /* width: -webkit-fill-available;
+  display: inline-block;
+  line-height: 20px;
+  padding: 20px;
+  background-color: #cd0000;
+  color: #fff;
+  vertical-align: middle;
+  width: max-content;
+
+  /* width: -webkit-fill-available;
     width: -moz-fill-available;
     width: -moz-available;    /* FireFox目前这个生效 */
-    /* width: fill-available;  */
+  /* width: fill-available;  */
 }
 
-.initial{
+.initial {
   display: flex;
   justify-content: space-between;
 }

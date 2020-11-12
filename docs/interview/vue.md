@@ -3,10 +3,7 @@
 .stop .prevent .once .trim
 
 ## vue-cli 工程常用的 npm 命令有哪些？
-1. npm install：下载 node_modules 资源包的命令
-2. npm run dev： 启动 vue-cli 开发环境的 npm命令
-3. npm run build： vue-cli 生成 生产环境部署资源 的 npm命令
-4. npm run build--report： 用于查看 vue-cli 生产环境部署资源文件大小的 npm命令
+npm run build--report： 用于查看 vue-cli 生产环境部署资源文件大小的 npm命令
 
 ## vue中 keep-alive 组件的作用?
 [文档](https://cn.vuejs.org/v2/api/#keep-alive)
@@ -23,19 +20,19 @@
 ```
 - 只能有一个组件被渲染，如包含v-for就不行
 - :max可以限制最多缓存多少个组件
-- 如何清除缓存
+- 如何清除缓存:通过控制include和exclude,keeo-alive是实时检测[文档](https://juejin.im/post/6844903635516653576)
 
 ## computed和watch有什么区别?
-缓存性、调用方法
+缓存性computed可缓、调用方法
 
-## 构建的 vue-cli 工程都到了哪些技术，它们的作用分别是什么？
+<!-- ## 构建的 vue-cli 工程都到了哪些技术，它们的作用分别是什么？
 1. vue.js：vue-cli工程的核心，主要特点是 双向数据绑定 和 组件系统。 
 2. vue-router：vue官方推荐使用的路由框架。
 3. vuex：专为 Vue.js 应用项目开发的状态管理器，主要用于维护vue组件间共用的一些 变量 和 方法。 
 4. axios（ 或者 fetch 、ajax ）：用于发起 GET 、或 POST 等 http请求，基于 Promise 设计。
 5. vux等：一个专为vue设计的移动端UI组件库。
 6. 创建一个emit.js文件，用于vue事件机制的管理。
-7. webpack：模块加载和vue-cli工程打包器。
+7. webpack：模块加载和vue-cli工程打包器。 -->
 
 ## vue中key的作用?
 1. 更高效的更新虚拟DOM;

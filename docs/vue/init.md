@@ -24,7 +24,8 @@ module.exports = {
 ```js
 module.exports = {
   devServer: {
-    open: true
+    open: true,
+    port:8000
   }
 }
 ```

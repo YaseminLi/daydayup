@@ -7,7 +7,7 @@ module.exports = {
     port: 8080,
     open: true,
   },
-  lintOnSave: false,
+  lintOnSave: true,
   chainWebpack: config => {
     config.module
       .rule('md')
@@ -29,7 +29,7 @@ module.exports = {
     sourceMap: true,
     loaderOptions: {
       sass: {
-        prependData: `@import "@/assets/css/reset.scss";`,
+        prependData: `@import "@/assets/css/common.scss";`,
       },
     },
   },

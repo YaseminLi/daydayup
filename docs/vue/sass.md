@@ -12,7 +12,7 @@
     sourceMap: true,
     loaderOptions: {
       sass: {
-        prependData: `@import "@/assets/css/reset.scss";`,
+        prependData: `@import "@/assets/css/common.scss";`,
       },
     },
   },

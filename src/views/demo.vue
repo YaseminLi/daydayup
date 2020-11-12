@@ -9,15 +9,16 @@
 
 <script>
 // @ is an alias to /src
-import PropEvent from '@/components/PropEvent.vue'
-import InputItem from '@/components/InputItem.vue'
-import Sync from '@/components/Sync.vue'
+import PropEvent from '@/components/PropEvent'
+import InputItem from '@/components/InputItem'
+import Sync from '@/components/Sync'
 
 export default {
   name: 'Props',
   components: {
     PropEvent,
-    InputItem, Sync
+    InputItem,
+    Sync
   },
   data () {
     return {

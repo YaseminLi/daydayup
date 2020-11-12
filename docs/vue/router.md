@@ -65,3 +65,6 @@ router.beforeEach((to, from, next) => {
   next()
 })
 ```
+
+### this.$router.options.routes 
+获取router.js中配置的路由对象

@@ -50,7 +50,8 @@ module.exports = {
             '/other/': [
                 ['git', 'git'],
                 ['cornerstone', 'svn-cornerstone'],
-                ['vscode', 'vscode必备']
+                ['vscode', 'vscode必备'],
+                ['身份验证', '身份验证'],
             ],
             '/vue/': [
                 ['init', '项目初始化'],
@@ -59,6 +60,7 @@ module.exports = {
             '/algorithm/': [
                 ['heap', '堆'],
                 ['binary-search', '二分查找法'],
+                ['source', '资源'],
             ],
             '/js/': [
                 ['string', 'string'],

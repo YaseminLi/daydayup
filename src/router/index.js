@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push (location) {
-  console.log('location:', location);
+  console.log('location:', location)
   return originalPush.call(this, location).catch(err => err)
 }
 
@@ -28,9 +28,7 @@ const routes = [
       title: 'login'
     },
     component: () =>
-      import(
-                /* webpackChunkName: "login" */ '../views/Login.vue'
-      ),
+      import(/* webpackChunkName: "login" */ '../views/Login.vue')
   },
   {
     path: '/dingwei',
@@ -40,9 +38,7 @@ const routes = [
       title: 'dingwei'
     },
     component: () =>
-      import(
-                /* webpackChunkName: "login" */ '../views/Dingwei.vue'
-      ),
+      import(/* webpackChunkName: "login" */ '../views/Dingwei.vue')
   },
   {
     path: '/demo',
@@ -51,10 +47,7 @@ const routes = [
     meta: {
       title: 'demo'
     },
-    component: () =>
-      import(
-                /* webpackChunkName: "demo" */ '../views/demo.vue'
-      ),
+    component: () => import(/* webpackChunkName: "demo" */ '../views/demo.vue')
   },
   {
     path: '/flex',
@@ -63,10 +56,25 @@ const routes = [
     meta: {
       title: 'flex'
     },
-    component: () =>
-      import(
-                /* webpackChunkName: "flex" */ '../views/flex.vue'
-      ),
+    component: () => import(/* webpackChunkName: "flex" */ '../views/flex.vue')
+  },
+  {
+    path: '/css',
+    name: 'css',
+    // leaf:true,//有二级路由
+    meta: {
+      title: 'css'
+    },
+    component: () => import(/* webpackChunkName: "css" */ '../views/css.vue')
+  },
+  {
+    path: '/upload',
+    name: 'upload',
+    // leaf:true,//有二级路由
+    meta: {
+      title: 'upload'
+    },
+    component: () => import(/* webpackChunkName: "upload" */ '../views/upload.vue')
   }
 ]
 
@@ -74,9 +82,9 @@ const router = new VueRouter({
   routes
 })
 
-router.beforeEach((to, from, next) => {
-  // console.log(from, to)
-  next()
-})
+// router.beforeEach((to, from, next) => {
+//   console.log(from, to)
+//   next()
+// })
 
 export default router

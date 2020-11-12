@@ -1,0 +1,31 @@
+// reset部分
+body {
+  margin: 0;
+  color: #333;//可设置成大部分字体颜色
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;//根据项目字体来
+  font-size: 14px; //可设置成页面大部分字号
+}
+
+h4 {
+  margin: 0;
+}
+
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  border: none;
+  background: none;
+  padding: 0;
+}
+input{
+  outline-style: none;
+  font-family: inherit;
+}
+
