@@ -7,17 +7,17 @@
         multiple
         ref="uploadFile"
       />
-      <button @click="upload">上传</button>
+      <a @click="uploadByClick">点击上传</a>
     </div>
     <div style="margin-bottom:20px;">
       <h4>自定义样式</h4>
-      <p>控件自带通过css修改兼容性不好,可以用目标元素覆盖</p>
+      <div>控件自带通过css修改兼容性不好,可以用其他元素覆盖</div>
       <div class="uploadMask">
         <input
           type="file"
           multiple
-          ref="uploadFile"
           class="uploadInput"
+          @change="upload"
         />
         点击上传
       </div>
@@ -28,18 +28,40 @@
 <script>
 export default {
   methods: {
-    upload () {
-      console.log('上传', this.$refs.uploadFile.files)
+    uploadByClick () {
+      console.log('uploadByClick', this.$refs.uploadFile.files)
       const formData = new FormData()
       formData.append('file', this.$refs.uploadFile.files[0])
       formData.append('fileName', this.$refs.uploadFile.files[0].name)
-      console.log('formData:', formData)
+      // formData.append('fileName', 'test')//不会覆盖
+      // formData.set('fileName', 'set')//会使formData只存在一个fileName
+      // for (const p of formData) {
+      //   console.log(p)
+      // }
+      // 发送数据data=formData
+      console.log('formData:', ...formData)
+    },
+    upload (e) {
+      console.log('upload', e.target.files[0])
+      const file = e.target.files[0]
+      // 到这已经获取到文件数据,可通过formData上传
+      // 也可以将上传的图片显示出来：
+      const reader = new FileReader()// 读取文件
+      reader.readAsDataURL(file)
+      reader.onloadend = function () {
+        console.log('reader', event.target.result)
+        const img = new Image()
+        img.src = event.target.result
+        img.onload = function () {
+
+        }
+      }
     }
   }
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 input {
   border: 1px solid;
   padding: 10px;
@@ -58,7 +80,7 @@ input[type='file']:optional {
 .uploadMask {
   width: 70px;
   height: 25px;
-  background: #409Eff;
+  background: #409eff;
   color: white;
   text-align: center;
   line-height: 25px;
