@@ -1,1 +1,3 @@
-https://i2test3.want-want.com/employeeEntry/sendTest
+post https://i2test3.want-want.com/orderManagementSystem/getOrderInfos?orderCode=2020111117184711037509&userId=00114260
+content-type: application/json
+token: c94ba482-ebd0-4c5f-b5d6-a0d9858b59b8

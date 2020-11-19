@@ -51,3 +51,6 @@ module.exports = {
   }
 }
 ```
+
+### 输出webpack配置
+vue inspect > output.js

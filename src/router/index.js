@@ -74,17 +74,13 @@ const routes = [
     meta: {
       title: 'upload'
     },
-    component: () => import(/* webpackChunkName: "upload" */ '../views/upload.vue')
+    component: () =>
+      import(/* webpackChunkName: "upload" */ '../views/upload.vue')
   }
 ]
 
 const router = new VueRouter({
   routes
 })
-
-// router.beforeEach((to, from, next) => {
-//   console.log(from, to)
-//   next()
-// })
 
 export default router

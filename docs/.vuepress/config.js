@@ -46,12 +46,14 @@ module.exports = {
                 ['clock', '倒计时'],
                 ['login', '登录'],
                 ['encrypt', '加密解密'],
+                ['initPage', '初始化页面后'],
             ],
             '/other/': [
                 ['git', 'git'],
                 ['cornerstone', 'svn-cornerstone'],
                 ['vscode', 'vscode必备'],
                 ['身份验证', '身份验证'],
+                ['唯一标识', '唯一标识'],
             ],
             '/vue/': [
                 ['init', '项目初始化'],

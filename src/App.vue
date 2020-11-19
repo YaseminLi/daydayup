@@ -33,39 +33,32 @@ export default {
     if (this.$router.history.current.name) {
       this.showCss = true
     }
+  },
+  watch: {
+    $route (to, from) {
+      if (to.name !== from.name) {
+        // 若跳转页面，将页面的滚动置0
+        const el = document.querySelector('.el-main')
+        const left = el.scrollLeft
+        const top = el.scrollTop
+        if (left || top) {
+          el.scrollTop = 0
+          el.scrollLeft = 0
+        }
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss">
-// html,
-// body {
-//   margin: 0;
-//   height: 100%;
-// }
-// #app {
-//   font-family: Avenir, Helvetica, Arial, sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   color: #2c3e50;
-//   height: 100%;
-// }
-// .el-container,
-// .el-menu {
-//   height: 100%;
-// }
+.el-main {
+  width: calc(100% - 200px);
+  height: 100vh;
 
-// #nav {
-//   padding: 30px;
-//   text-align: center;
-
-//   a {
-//     font-weight: bold;
-//     color: #2c3e50;
-
-//     &.router-link-exact-active {
-//       color: #42b983;
-//     }
-//   }
-// }
+  section {
+    min-width: 1000px;
+    min-height: 1000px;
+  }
+}
 </style>
