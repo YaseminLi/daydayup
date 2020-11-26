@@ -6,11 +6,7 @@
     <div class="item">
       <!-- label标签：通过for属性与表单元素关联，for属性值需要和表单的ID一致，效果：点击label标签时，会触发关联表单元素的click事件 -->
       <label for="user">账号：</label>
-      <input
-        placeholder="请输入"
-        id="user"
-        v-model="user"
-      />
+      <input placeholder="请输入" id="user" v-model="user" />
     </div>
     <div class="item">
       <label for="password">密码：</label>
@@ -25,45 +21,37 @@
     <div class="item">
       <div
         class="remember"
-        :class="isRememberUser?'is-remember':'not-remember'"
+        :class="isRememberUser ? 'is-remember' : 'not-remember'"
       >
-        <label
-          for="remember-user"
-          class="checkboxCursor"
-        >
+        <label for="remember-user" class="checkboxCursor">
           <input
             type="checkbox"
             id="remember-user"
             v-model="isRememberUser"
             class="checkbox-cursor"
           />
-          记住账号</label>
+          记住账号</label
+        >
       </div>
       <div
         class="remember"
-        :class="isRememberPassword?'is-remember':'not-remember'"
+        :class="isRememberPassword ? 'is-remember' : 'not-remember'"
       >
-        <label
-          for="remember-password"
-          class="checkboxCursor"
-        >
+        <label for="remember-password" class="checkboxCursor">
           <input
             type="checkbox"
             id="remember-password"
             v-model="isRememberPassword"
             class="checkbox-cursor"
           />
-          记住密码</label>
+          记住密码</label
+        >
       </div>
     </div>
     <!-- form中type="submit"点击提交表单 -->
     <!-- <button type="submit">登录</button> -->
     <button @click.once="loginCheck">登录</button>
-    <div
-      v-for="item in list"
-      :key="item"
-      ref="listItem"
-    >{{item}}</div>
+    <div v-for="item in list" :key="item" ref="listItem">{{ item }}</div>
   </div>
   <!-- </form> -->
 </template>
@@ -113,7 +101,7 @@ export default {
     }
   },
   created () {
-    console.log('login created');
+    console.log('login created')
     this.getLoginInfo()
   },
   methods: {
@@ -172,17 +160,17 @@ export default {
     }
   },
   mounted () {
-    console.log('login mounted');
+    console.log('login mounted')
   },
   destroyed () {
-    console.log('login destoryed');
+    console.log('login destoryed')
   },
   activated () {
-    console.log('login actived');
+    console.log('login actived')
   },
   deactivated () {
-    console.log('login deactivated');
-  },
+    console.log('login deactivated')
+  }
 }
 </script>
 <style lang="scss" scoped>

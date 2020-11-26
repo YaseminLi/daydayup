@@ -47,6 +47,7 @@ module.exports = {
                 ['login', '登录'],
                 ['encrypt', '加密解密'],
                 ['initPage', '初始化页面后'],
+                ['timing', '给页面添加计时器'],
             ],
             '/other/': [
                 ['git', 'git'],

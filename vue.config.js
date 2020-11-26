@@ -5,7 +5,7 @@ function resolve (dir) {
 module.exports = {
   devServer: {
     port: 8080,
-    open: true,
+    open: true
   },
   lintOnSave: true,
   chainWebpack: config => {
@@ -29,8 +29,8 @@ module.exports = {
     sourceMap: true,
     loaderOptions: {
       sass: {
-        prependData: `@import "@/assets/css/common.scss";`,
-      },
-    },
-  },
+        prependData: '@import "@/assets/css/common.scss";'
+      }
+    }
+  }
 }

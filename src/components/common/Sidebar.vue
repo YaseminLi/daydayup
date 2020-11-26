@@ -62,4 +62,8 @@ export default {
 .el-submenu .el-menu-item{
   min-width:100%
 }
+
+.el-menu {
+  border-right: none;
+}
 </style>
