@@ -6,9 +6,9 @@
 export default {
   model: {
     prop: 'checked',
-    event: 'change'
-  }
-}
+    event: 'change',
+  },
+};
 </script>
 
 <style></style>

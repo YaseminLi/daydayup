@@ -55,6 +55,7 @@ module.exports = {
                 ['vscode', 'vscode必备'],
                 ['身份验证', '身份验证'],
                 ['唯一标识', '唯一标识'],
+                ['standard', '标准'],
             ],
             '/vue/': [
                 ['init', '项目初始化'],
