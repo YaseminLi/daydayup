@@ -115,11 +115,19 @@ reset，既不保留本地修改，远程也去除此次提交记录
 
 - git push -f
 
-### 只远程回滚到某个版本，保留本地的修改，即撤销 push
+### 只远程回滚到某个版本
+
+保留本地的修改至add前，远程去除此次提交记录
 
 - git reset --soft 1094a（版本号的前 5 位）
-- git add,commit
-- git push origin 分支名 --force
+
+远程还未回退，本地回滚了push,更改保留在暂存区
+
+- git reset HEAD <file> 
+
+取消本地更改的暂存
+
+- git push -f 将回滚推到远端
 
 ## 删除本地和远程分支
 
