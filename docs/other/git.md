@@ -101,19 +101,21 @@ master 上为可以发布的代码，需要在分支上写自己负责的部分�
 - git checkout --file//工作区时
 - git reset HEAD <file>//暂存区时，已经 add 了，先撤销提交，重新放回工作区
 
-## 版本回退
+## 版本回滚
 
 用 HEAD 表示当前版本，上一个版本就是 HEAD^，上上一个版本就是 HEAD^^，当然往上 100 个版本写成 HEAD~100
 
-### 本地远程都回退
+### 本地远程都回滚到某个版本
+
+reset，既不保留本地修改，远程也去除此次提交记录
 
 - git reset --hard 1094a（版本号的前 5 位）
 
-此时 git status 提示本地落后远程一个版本
+此时 git status 提示本地落后远程一个版本，需要将这次回滚强制提交到远端
 
-- git push origin 分支名 --force
+- git push -f
 
-### 远程回退，保留本地的修改，即撤销 push
+### 只远程回滚到某个版本，保留本地的修改，即撤销 push
 
 - git reset --soft 1094a（版本号的前 5 位）
 - git add,commit
