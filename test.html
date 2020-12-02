@@ -4,11 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    #uni::before {
+      content: '\260E';
+    }
+
+    #uni1::before {
+      content: '\2642';
+    }
+  </style>
 </head>
 <body>
   <!-- <a href="http://localhost:3000/#/videoList" target="blank">jjjjjjj</a>
    -->
-   <div onclick="change()">kkkkkk</div>
+   <div onclick="change()">&#36;</div>
+   <div onclick="change()">$</div>
+   <!-- <span id='uni'></span> -->
+   <span id='uni1'></span>
 </body>
 <script>
   function change() {
