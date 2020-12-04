@@ -1,4 +1,6 @@
-之前项目中会遇到需要计算求和，知道和丢失精度有关，但原因不是很清楚，看到这个[参考](https://zhuanlan.zhihu.com/p/100353781)，学习下。
+之前项目中会遇到需要计算求和，知道和丢失精度有关，但原因不是很清楚。记录下查到的资料和解决方法：
+[丢失精度原因](https://zhuanlan.zhihu.com/p/100353781)
+[丢失精度解决方法](https://blog.csdn.net/helloxiaoliang/article/details/72723387)
 
 JS 在加减乘除运算中，结果可能会和手算的不一样，即丢失精度，如：
 
@@ -74,7 +76,7 @@ toPrecision() 方法以指定的精度返回该数值对象的字符串表示
 
 0.1.toPrecision(21)='0.100000000000000005551'
 
-ES6新增常量：Number.EPSILON，浮点数计算的误差范围，小于这个数基本上可靠
+ES6 新增常量：Number.EPSILON，浮点数计算的误差范围，小于这个数基本上可靠
 
 ### 小数最后一位为 5 时 toFixed()不精确
 
@@ -108,29 +110,91 @@ function toFixed(number, precision) {
     return number.toFixed(precision)
   }
 }
-console.log(toFixed(1.333335, 5))//1.33334
+console.log(toFixed(1.333335, 5)) //1.33334
 ```
 
-修复方法2:
+修复方法 2:
+
 ```js
-//先扩大再缩小法 
-function toFixed(num, s) {
-    var times = Math.pow(10, s)
-    // 0.5 为了舍入
-    var des = num * times + 0.5
-    // 去除小数
-    des = parseInt(des, 10) / times
-    return des + ''
+//先扩大再缩小法
+function toFixed(f, digit) {
+  // Math.pow(指数，幂指数)
+  const m = Math.pow(10, digit)
+  // Math.round（） 四舍五入
+  return Math.round(f * m, 10) / m
 }
 console.log(toFixed(1.333332, 5)) //1.33333
 ```
 
-
 ### 数据展示
+
 当你拿到 1.4000000000000001 这样的数据要展示时，建议使用 toPrecision 凑整并 parseFloat 转成数字后再显示
+
 ```js
-parseFloat(1.4000000000000001.toPrecision(12)) === 1.4  // true
+parseFloat((1.4000000000000001).toPrecision(12)) === 1.4 // true
 ```
-精度为什么选择12？ 可以解决掉大部分精度问题
+
+精度为什么选择 12？ 可以解决掉大部分精度问题
+
+1. 显示 2 位小数
+
+```js
+const commaFormat = (value, decimalDigits, addZero) => {
+  if (value) {
+    value = value.toString().replace(/,/g, '')
+    value = Number(value)
+  }
+  let newVal =
+    Math.round(
+      Math.round(value * Math.pow(10, (decimalDigits || 0) + 1)) / 10
+    ) / Math.pow(10, decimalDigits || 0)
+
+  if (addZero === true && value !== 0) {
+    newVal = newVal.toFixed(decimalDigits)
+  }
+
+  return newVal
+    .toString()
+    .replace(
+      /^(-?\d+?)((?:\d{3})+)(?=\.\d+$|$)/,
+      (all, pre, digits) => pre + digits.replace(/\d{3}/g, ',$&')
+    )
+}
+```
 
 ### 浮点数计算
+
+涉及到浮点数的加减乘除，先把数字升级成整数，计算完成后再降级。升级的倍数可以通过小数点后长度来判断
+
+1. 求和
+
+```js
+const sum = (...number) => {
+  const args = number;
+  const { length } = args;
+  // 不固定位数，按照最长的小数位数
+  let d = 0; // 参数中最多小数位数
+  let result = 0; // 和
+  for (let i = 0; i < length; i += 1) {
+    const str = `${args[i]}`;
+    if (str.indexOf('.') !== -1) {
+      const temp = str.split('.')[1].length;
+      d = d < temp ? temp : d;
+    }
+  }
+  //固定位数，可以给d赋值
+  const m = 10 ** d;
+  Object.keys(args).forEach((key) => {
+    if (args[key]) {
+      result += args[key] * m;
+    }
+    console.log(args[key]);
+    console.log(m);
+    console.log(args[key] * m);
+  });
+  console.log(result);
+  return Math.round(result, 10) / m;
+};
+console.log(sum(0.16344556, 3.153)) //3.31644556
+console.log(sum(19.9, 2.12222222)) //22.02222222
+```
