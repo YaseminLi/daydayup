@@ -79,6 +79,7 @@ module.exports = {
                 ['cookie storage', 'cookie storage'],
                 ['Ajax', 'Ajax'],
                 ['calculate', '计算']
+                ['数据类型之间的转换', '计数据类型之间的转换']
             ],
             '/html/': [
                 ['模板', 'html模板'],
