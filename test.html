@@ -5,22 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    #uni::before {
-      content: '\260E';
-    }
-
-    #uni1::before {
-      content: '\2642';
-    }
+   .container {
+     display: inline-block;
+     width: 200px;
+     max-height: 100px;
+     background: pink;
+     overflow: auto;
+   }
   </style>
 </head>
 <body>
   <!-- <a href="http://localhost:3000/#/videoList" target="blank">jjjjjjj</a>
    -->
-   <div onclick="change()">&#36;</div>
-   <div onclick="change()">$</div>
-   <!-- <span id='uni'></span> -->
-   <span id='uni1'></span>
+   <div class="container">
+     <ul>
+       <li>88</li>
+       <li>88</li>
+       <!-- <li>88</li>
+       <li>88</li>
+       <li>88</li>
+       <li>88</li>
+       <li>88</li>
+       <li>88</li>
+       <li>88</li> -->
+     </ul>
+   </div>
 </body>
 <script>
   function change() {
