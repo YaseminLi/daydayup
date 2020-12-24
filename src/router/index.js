@@ -74,6 +74,15 @@ const routes = [
     },
     component: () => import(/* webpackChunkName: "upload" */ '../views/upload.vue'),
   },
+  {
+    path: '/iframe',
+    name: 'iframe',
+    // leaf:true,//有二级路由
+    meta: {
+      title: 'iframe',
+    },
+    component: () => import(/* webpackChunkName: "iframe" */ '../views/iframe.vue'),
+  },
 ];
 
 const router = new VueRouter({

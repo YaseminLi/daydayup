@@ -5,35 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-   .container {
-     display: inline-block;
-     width: 200px;
-     max-height: 100px;
-     background: pink;
-     overflow: auto;
-   }
+  .steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+}
+
+@media (min-width: 700px) {
+  .steps {
+    grid-template-columns: 250px 1fr;
+  }
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+}
+
+@media (min-width: 200px) {
+  .layout {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
   </style>
 </head>
 <body>
-  <!-- <a href="http://localhost:3000/#/videoList" target="blank">jjjjjjj</a>
-   -->
-   <div class="container">
-     <ul>
-       <li>88</li>
-       <li>88</li>
-       <!-- <li>88</li>
-       <li>88</li>
-       <li>88</li>
-       <li>88</li>
-       <li>88</li>
-       <li>88</li>
-       <li>88</li> -->
-     </ul>
-   </div>
+   <div class="wrapper">
+    <section class="steps">
+      <div>
+        <h2>How it works</h2>
+        <p>Easy and simple steps</p>
+      </div>
+      <div class="layout">
+        <div class="layout__item">
+          <article class="card">111</article>
+        </div>
+        <div class="layout__item">
+          <article class="card">222</article>
+        </div>
+        <div class="layout__item">
+          <article class="card">333</article>
+        </div>
+      </div>
+    </section>
+  </div>
+
 </body>
-<script>
-  function change() {
-    window.open('http://localhost:3000/#/videoList','_blank')
-  }
-</script>
 </html>
