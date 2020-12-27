@@ -9,23 +9,23 @@
 
 <script>
 // @ is an alias to /src
-import PropEvent from '@/components/PropEvent'
-import InputItem from '@/components/InputItem'
-import Sync from '@/components/Sync'
+import PropEvent from '@/components/PropEvent.vue';
+import InputItem from '@/components/InputItem.vue';
+import Sync from '@/components/Sync.vue';
 
 export default {
   name: 'Props',
   components: {
     PropEvent,
     InputItem,
-    Sync
+    Sync,
   },
-  data () {
+  data() {
     return {
       count: 0,
       inputValue: '',
-      date: '2020'
-    }
-  }
-}
+      date: '2020',
+    };
+  },
+};
 </script>

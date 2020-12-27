@@ -100,23 +100,37 @@ git checkout —-track origin/develop  别名：git track origin/develop
 - git checkout --file//工作区时
 - git reset HEAD <file>//暂存区时，已经 add 了，先撤销提交，重新放回工作区
 
-## 版本回退
+## 版本回滚
 
 用 HEAD 表示当前版本，上一个版本就是 HEAD^，上上一个版本就是 HEAD^^，当然往上 100 个版本写成 HEAD~100
 
-### 本地远程都回退
+### 本地远程都回滚到某个版本
+
+reset，既不保留本地修改，远程也去除此次提交记录
 
 - git reset --hard 1094a（版本号的前 5 位）
 
-此时 git status 提示本地落后远程一个版本
+此时 git status 提示本地落后远程一个版本，需要将这次回滚强制提交到远端
 
-- git push origin 分支名 --force
+- git push -f
 
-### 远程回退，保留本地的修改，即撤销 push
+### 只远程回滚到某个版本
+
+保留本地的修改至add前，远程去除此次提交记录
 
 - git reset --soft 1094a（版本号的前 5 位）
-- git add,commit
-- git push origin 分支名 --force
+
+远程还未回退，本地回滚了push,更改保留在暂存区(可以将版本回滚到多个提交以前，合并修改后变成一个commit)
+
+- git reset HEAD <file> 
+
+取消本地更改的暂存
+
+- git push -f 将回滚推到远端
+
+### 回滚某个版本
+
+以达到撤销该版本的修改的目的。比如，我们commit了三个版本（版本一、版本二、 版本三），突然发现版本二不行（如：有bug），想要撤销版本二，但又不想影响撤销版本三的提交，就可以用 git revert 命令来反做版本二，生成新的版本四，这个版本四里会保留版本三的东西，但撤销了版本二的东西。
 
 ## 删除本地和远程分支
 

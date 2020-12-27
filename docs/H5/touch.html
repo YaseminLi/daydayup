@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      #level0 {
+        /* width: 500px;
+        height: 500px; */
+      }
+
+      #level1-0 {
+        background: red;
+        width: 500px;
+        height: 500px;
+      }
+
+      #level1-1 {
+        background: green;
+        width: 500px;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="level0">
+      <div id="level1-0">1-0</div>
+      <div id="level1-1">1-1</div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    var level10 = document.getElementById('level1-0')
+
+    level10.addEventListener('touchstart', function(e) {
+      console.log('level10 touchstart')
+    })
+
+    level10.addEventListener('touchmove', function(e) {
+      console.log('level10 touchmove')
+      e.stopPropagation()
+    })
+
+    level10.addEventListener('touchend', function(e) {
+      console.log('level10 touchend')
+    })
+
+    level10.onclick = function() {
+      console.log(5)
+    }
+
+    document.body.onclick = function() {
+      console.log('6')
+    }
+    document.body.addEventListener('touchstart', function(e) {
+      console.log('body touchstart')
+    })
+    document.body.addEventListener('touchmove', function(e) {
+      console.log('body touchmove')
+    })
+    document.body.addEventListener('touchend', function(e) {
+      console.log('body touchend')
+    })
+  </script>
+</html>

@@ -47,6 +47,7 @@ module.exports = {
                 ['login', '登录'],
                 ['encrypt', '加密解密'],
                 ['initPage', '初始化页面后'],
+                ['timing', '给页面添加计时器'],
             ],
             '/other/': [
                 ['git', 'git'],
@@ -54,6 +55,8 @@ module.exports = {
                 ['vscode', 'vscode必备'],
                 ['身份验证', '身份验证'],
                 ['唯一标识', '唯一标识'],
+                ['standard', '标准'],
+                ['character', '字符编码'],
             ],
             '/vue/': [
                 ['init', '项目初始化'],
@@ -76,6 +79,7 @@ module.exports = {
                 ['cookie storage', 'cookie storage'],
                 ['Ajax', 'Ajax'],
                 ['calculate', '计算']
+                ['数据类型之间的转换', '计数据类型之间的转换']
             ],
             '/html/': [
                 ['模板', 'html模板'],

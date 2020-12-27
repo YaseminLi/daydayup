@@ -7,15 +7,15 @@ export default {
   props: {
     date: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   methods: {
-    click () {
-      this.$emit('update:date', String(new Date()))
-    }
-  }
-}
+    click() {
+      this.$emit('update:date', String(new Date()));
+    },
+  },
+};
 </script>
 
 <style>
