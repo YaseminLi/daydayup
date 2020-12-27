@@ -88,9 +88,8 @@ master 上为可以发布的代码，需要在分支上写自己负责的部分�
       	- git merge dev
       	- git push origin master
 
-* 拉其他分支的远程代码
-* git checkout -b branch
-* git checkout —-track origin/develop
+* 拉取远程分支并建立联系
+git checkout —-track origin/develop  别名：git track origin/develop
 
 ## gitignore
 
