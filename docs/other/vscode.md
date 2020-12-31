@@ -1,3 +1,4 @@
+
 ## restClient请求测试
 新建xxx.rest文件,get请求直接写url点击文件上方的send
 
@@ -16,4 +17,8 @@ rm -fr ~/Library/Application\ Support/Code/
 rm -fr ~/Library/Saved\ Application\ State/com.microsoft.VSCode.savedState/
 rm -fr ~/.vscode/
 
+## 切换编辑区和terminal
+键盘快捷方式中search
+- focus first editor 
+- focus terminal
 

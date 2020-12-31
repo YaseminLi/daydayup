@@ -1,3 +1,35 @@
+const as = async () => { const data = await ajax(); }
+async function () {
+    for (const fn of actions) {
+        await fn();
+    }
+}
+async function() {
+    for await (const fn of actions) {
+        fn();
+    }
+}
+
+动态引入import 及require和import对比使用
+
+const a = 123;
+export { a };
+
+import('./a.js').then(data => {
+    console.log(data.a); // 123;
+})
+
+console.log(0||'435');
+console.log(undefined||'435');
+console.log(''||'435');
+console.log(null||'435');
+console.log('-----------');
+console.log(0 ?? '435');
+console.log(undefined ?? '435');
+console.log('' ?? '435');
+console.log(null ?? '435');
+
+
 数字存储
 数据库是100.00的string
 我需要100sting number
