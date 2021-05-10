@@ -7,6 +7,41 @@
 		雅虎军规 看一看https://www.imooc.com/coursescore/50
 		https://www.tuicool.com/articles/J3uyaa
 		http://www.ha97.com/2710.html
+const as = async () => { const data = await ajax(); }
+async function () {
+    for (const fn of actions) {
+        await fn();
+    }
+}
+async function() {
+    for await (const fn of actions) {
+        fn();
+    }
+}
+
+动态引入import 及require和import对比使用
+
+const a = 123;
+export { a };
+
+import('./a.js').then(data => {
+    console.log(data.a); // 123;
+})
+
+console.log(0||'435');
+console.log(undefined||'435');
+console.log(''||'435');
+console.log(null||'435');
+console.log('-----------');
+console.log(0 ?? '435');
+console.log(undefined ?? '435');
+console.log('' ?? '435');
+console.log(null ?? '435');
+
+
+数字存储
+数据库是100.00的string
+我需要100sting number
 
 
 h5 内嵌页面需要考虑哪些
@@ -23,3 +58,5 @@ css样式架构
 
 加密
 紧急上版？
+
+leetcode 48.旋转图像
