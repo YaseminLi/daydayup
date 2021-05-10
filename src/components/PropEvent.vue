@@ -4,6 +4,15 @@
 
 <script>
 export default {
+    created(){
+    console.log('child create');
+  },
+    beforeDestroy(){
+    console.log('child beforeDestroy');
+  },
+  destroyed(){
+    console.log('child destroyed');
+  }
 
 };
 </script>

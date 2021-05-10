@@ -27,5 +27,14 @@ export default {
       date: '2020',
     };
   },
+  created(){
+    console.log('parent create');
+  },
+  beforeDestroy(){
+    console.log('parent beforeDestroy');
+  },
+  destroyed(){
+    console.log('parent destroyed');
+  }
 };
 </script>

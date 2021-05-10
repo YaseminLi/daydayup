@@ -1,6 +1,12 @@
-数字存储
-数据库是100.00的string
-我需要100sting number
+
+	• 要解决的问题
+		○ async
+		○ proxy
+		○ 柯里化
+		○ vue组件通信
+		雅虎军规 看一看https://www.imooc.com/coursescore/50
+		https://www.tuicool.com/articles/J3uyaa
+		http://www.ha97.com/2710.html
 
 
 h5 内嵌页面需要考虑哪些

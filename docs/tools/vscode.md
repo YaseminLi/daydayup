@@ -6,6 +6,9 @@
 ### 自动打注释
 Turbo Console Log
 
+### 在浏览器中打开html 
+open in broswer  alt+B
+
 
 ## 重装vscode
 rm -fr ~/Library/Preferences/com.microsoft.VSCode.helper.plist

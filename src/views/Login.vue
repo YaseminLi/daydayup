@@ -62,6 +62,7 @@
 // checkbox:替换成图片 点击文字选中 鼠标换成手的样式
 // 本地存储的密码加密 cryptoJS
 import CryptoJS from 'crypto-js';
+import axios from 'axios'
 
 const key = CryptoJS.enc.Utf8.parse('1234123412ABCDEF'); // 十六位十六进制数作为密钥
 const iv = CryptoJS.enc.Utf8.parse('ABCDEF1234123412'); // 十六位十六进制数作为密钥偏移量
@@ -104,6 +105,14 @@ export default {
   created() {
     console.log('login created');
     this.getLoginInfo();
+    // 为给定 ID 的 user 创建请求
+axios.get('http://localhost:3000/')
+  .then(function (response) {
+    console.log('rrrrr',response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
   },
   methods: {
     getLoginInfo() {

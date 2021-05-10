@@ -1,6 +1,6 @@
 ### airbnb/js
 
-https://github.com/airbnb/javascript
+https://github.com/airbnb/javascript  https://github.com/lin-123/javascript#properties
 
 3.1 Use the literal syntax for object creation. eslint: no-new-object
 ```js
