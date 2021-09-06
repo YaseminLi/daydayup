@@ -10,10 +10,10 @@ Vue.use(ElementUI);
 
 Vue.config.productionTip = false;
 
-const vconsole = new Vconsole();
-Vue.use(vconsole);
+// const vconsole = new Vconsole();
+// Vue.use(vconsole);
 
 new Vue({
   router,
-  render: (h) => h(App),
+  render: h => h(App)
 }).$mount('#app');

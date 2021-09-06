@@ -25,3 +25,11 @@ Promise.all([p1,p2,p3]).then(()=>{
     
 })
 ```
+
+
+## 替换node-sass 为dark-sass
+npm uninstall node-sass
+
+npm install --dev sass
+
+全局搜索 /deep/ , 将项目里的 /deep/ 替换为 ::v-deep

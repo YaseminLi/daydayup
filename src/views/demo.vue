@@ -1,9 +1,9 @@
 <template>
   <div class="props">
-    <PropEvent @add="count+=$event" />
-    <div>{{count}}</div>
+    <PropEvent @add="count += $event" />
+    <div>{{ count }}</div>
     <input-item v-model="inputValue" />
-    <sync :date.sync='date' />
+    <sync :date.sync="date" />
   </div>
 </template>
 
@@ -27,14 +27,14 @@ export default {
       date: '2020',
     };
   },
-  created(){
+  created() {
     console.log('parent create');
   },
-  beforeDestroy(){
+  beforeDestroy() {
     console.log('parent beforeDestroy');
   },
-  destroyed(){
+  destroyed() {
     console.log('parent destroyed');
-  }
+  },
 };
 </script>

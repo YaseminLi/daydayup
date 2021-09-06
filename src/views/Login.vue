@@ -61,34 +61,34 @@
 // input框：点击label聚焦input,密码显示圆点，无聚焦外框
 // checkbox:替换成图片 点击文字选中 鼠标换成手的样式
 // 本地存储的密码加密 cryptoJS
-import CryptoJS from 'crypto-js';
+import CryptoJS from 'crypto-js'
 import axios from 'axios'
 
-const key = CryptoJS.enc.Utf8.parse('1234123412ABCDEF'); // 十六位十六进制数作为密钥
-const iv = CryptoJS.enc.Utf8.parse('ABCDEF1234123412'); // 十六位十六进制数作为密钥偏移量
+const key = CryptoJS.enc.Utf8.parse('1234123412ABCDEF') // 十六位十六进制数作为密钥
+const iv = CryptoJS.enc.Utf8.parse('ABCDEF1234123412') // 十六位十六进制数作为密钥偏移量
 
 // 解密方法
 function Decrypt(word) {
-  const encryptedHexStr = CryptoJS.enc.Hex.parse(word);
-  const srcs = CryptoJS.enc.Base64.stringify(encryptedHexStr);
+  const encryptedHexStr = CryptoJS.enc.Hex.parse(word)
+  const srcs = CryptoJS.enc.Base64.stringify(encryptedHexStr)
   const decrypt = CryptoJS.AES.decrypt(srcs, key, {
     iv,
     mode: CryptoJS.mode.CBC,
     padding: CryptoJS.pad.Pkcs7,
-  });
-  const decryptedStr = decrypt.toString(CryptoJS.enc.Utf8);
-  return decryptedStr.toString();
+  })
+  const decryptedStr = decrypt.toString(CryptoJS.enc.Utf8)
+  return decryptedStr.toString()
 }
 
 // 加密方法
 function Encrypt(word) {
-  const srcs = CryptoJS.enc.Utf8.parse(word);
+  const srcs = CryptoJS.enc.Utf8.parse(word)
   const encrypted = CryptoJS.AES.encrypt(srcs, key, {
     iv,
     mode: CryptoJS.mode.CBC,
     padding: CryptoJS.pad.Pkcs7,
-  });
-  return encrypted.ciphertext.toString().toUpperCase();
+  })
+  return encrypted.ciphertext.toString().toUpperCase()
 }
 
 export default {
@@ -100,40 +100,39 @@ export default {
       isRememberUser: '',
       isRememberPassword: '',
       list: [1, 2, 3, 4],
-    };
+    }
   },
   created() {
-    console.log('login created');
-    this.getLoginInfo();
+    console.log('login created')
+    this.getLoginInfo()
     // 为给定 ID 的 user 创建请求
-axios.get('http://localhost:3000/')
-  .then(function (response) {
-    console.log('rrrrr',response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+    axios
+      .get('http://localhost:3000/')
+      .then(function (response) {
+        console.log('rrrrr', response)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
   },
   methods: {
     getLoginInfo() {
       // 从本地读取账号密码等信息,key尽量唯一避免重复
-      const loginInfo = JSON.parse(localStorage.getItem('login-daydayup'));
+      const loginInfo = JSON.parse(localStorage.getItem('login-daydayup'))
       // console.log('loginInfo', loginInfo)
       if (loginInfo) {
-        const {
-          user, password, isRememberUser, isRememberPassword,
-        } = loginInfo;
-        this.user = user;
-        this.password = Decrypt(password);
-        this.isRememberUser = isRememberUser;
-        this.isRememberPassword = isRememberPassword;
+        const { user, password, isRememberUser, isRememberPassword } = loginInfo
+        this.user = user
+        this.password = Decrypt(password)
+        this.isRememberUser = isRememberUser
+        this.isRememberPassword = isRememberPassword
       }
     },
     loginCheck() {
       if (!this.user || !this.password) {
-        this.$message.error('请输入用户名、密码');
+        this.$message.error('请输入用户名、密码')
       } else {
-        this.login();
+        this.login()
       }
     },
     storageLoginInfo() {
@@ -143,8 +142,8 @@ axios.get('http://localhost:3000/')
         isRememberPassword: this.isRememberPassword,
         user: this.isRememberUser ? this.user : '',
         password: this.isRememberPassword ? Encrypt(this.password) : '',
-      };
-      localStorage.setItem('login-daydayup', JSON.stringify(login));
+      }
+      localStorage.setItem('login-daydayup', JSON.stringify(login))
     },
     login() {
       // 登入
@@ -152,8 +151,8 @@ axios.get('http://localhost:3000/')
       // 发送登录请求，根据服务端返回的状态码判断是否登录成功
       // 成功
       // 1.在本地存储账号密码等信息
-      console.log('password:', this.password);
-      this.storageLoginInfo();
+      console.log('password:', this.password)
+      this.storageLoginInfo()
       // 2.路径跳转 this.$router.push()
     },
   },
@@ -161,29 +160,29 @@ axios.get('http://localhost:3000/')
     isRememberPassword() {
       // 记住密码时需要记住账号
       if (this.isRememberPassword) {
-        this.isRememberUser = true;
+        this.isRememberUser = true
       }
     },
     // 不记住账号时，密码也不能记住
     isRememberUser() {
       if (!this.isRememberUser) {
-        this.isRememberPassword = false;
+        this.isRememberPassword = false
       }
     },
   },
   mounted() {
-    console.log('login mounted');
+    console.log('login mounted')
   },
   destroyed() {
-    console.log('login destoryed');
+    console.log('login destoryed')
   },
   activated() {
-    console.log('login actived');
+    console.log('login actived')
   },
   deactivated() {
-    console.log('login deactivated');
+    console.log('login deactivated')
   },
-};
+}
 </script>
 <style lang="scss" scoped>
 .login {
