@@ -186,3 +186,31 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 \$ git push -u origin +master
 
 [其它问题](https://blog.csdn.net/crazydony/article/details/51983343)
+
+
+
+## git config
+```js
+[user]
+	name = xxx
+	email = xxx
+
+[alias]
+    st = status
+    ck = checkout
+    co = checkout
+    cm = commit
+    cmm = commit -a -m
+    br = branch
+    unstage = reset HEAD
+    last = diff HEAD^
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    dif = diff
+    dic = diff --cached
+    track = checkout --track
+    save = stash save
+    pop = stash pop
+    p = pull --rebase
+    mg = merge --no-commit
+    f = fetch
+```
