@@ -120,7 +120,7 @@ reset，既不保留本地修改，远程也去除此次提交记录
 
 - git reset --soft 1094a（版本号的前 5 位）
 
-远程还未回退，本地回滚了push,更改保留在暂存区(可以将版本回滚到多个提交以前，合并修改后变成一个commit)
+远程还未回退，本地回滚了push,更改保留在暂存区(可以将版本回滚到多个提交以前，合并修改后变成一个commit) git stash   git push -f
 
 - git reset HEAD <file> 
 
